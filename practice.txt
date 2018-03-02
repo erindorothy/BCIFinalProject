@@ -1,0 +1,95 @@
+Erin Cole
+This file conains code that I used to get NeuroPy started. Keeping this code for future reference.
+
+
+Python 3.5.4 |Anaconda 4.2.0 (64-bit)| (default, Aug 14 2017, 13:41:13) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from NeuroPy import Neuropy
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'Neuropy'
+>>> from NeuroPy import NeuroPy
+>>> from time import sleep
+>>> neuropy = NeuroPy()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>>
+^C
+
+Python 3.5.4 |Anaconda 4.2.0 (64-bit)| (default, Aug 14 2017, 13:41:13) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import NeuroPy
+>>> neuro = NeuroPy()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> def attention_callback(attention_value):
+... print("Value of attention is: ", attention_value)
+  File "<stdin>", line 2
+    print("Value of attention is: ", attention_value)
+        ^
+IndentationError: expected an indented block
+>>> def attention_callback(attention_value):
+... print("Value of attention is: ", attention_value)
+  File "<stdin>", line 2
+    print("Value of attention is: ", attention_value)
+        ^
+IndentationError: expected an indented block
+>>> print("Value of attention is: ", attention_value) return NONE
+  File "<stdin>", line 1
+    print("Value of attention is: ", attention_value) return NONE
+                                                           ^
+SyntaxError: invalid syntax
+>>> print("Value of attention is: ", attention_value) return NONE
+  File "<stdin>", line 1
+    print("Value of attention is: ", attention_value) return NONE
+                                                           ^
+SyntaxError: invalid syntax
+>>> def attention_callback(attention_value):
+...     """this function will be called everytime NeuroPy has a new value for attention"""
+...     print ("Value of attention is: ", attention_value)
+...     return None
+...
+>>> neuropy = NeuroPy()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> NeuroPy.setCallBack("attention", attention_callback)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'NeuroPy' has no attribute 'setCallBack'
+>>> NeuroPy()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> from NeuroPy  import NeuroPy as n
+>>> neuropy - n
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'neuropy' is not defined
+>>> neuropy = n
+>>> neuropy - n()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> neuropy = n()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'module' object is not callable
+>>> neuropy = n.NeuroPy()
+Exception ignored in: <bound method NeuroPy.__del__ of <NeuroPy.NeuroPy.NeuroPy object at 0x0000023F5A738A90>>
+Traceback (most recent call last):
+  File "C:\Users\erinc\Anaconda3\lib\site-packages\NeuroPy\NeuroPy.py", line 71, in __del__
+    self.srl.close()
+AttributeError: 'NoneType' object has no attribute 'close'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: __init__() missing 1 required positional argument: 'port'
+>>> neuropy = n.NeuroPy("COM6", 57600)
+>>> neuropy.start()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\erinc\Anaconda3\lib\site-packages\NeuroPy\NeuroPy.py", line 76, in start
+    self.srl=serial.Serial(self.__port,self.__baudRate)
+AttributeError: module 'serial' has no attribute 'Serial'
