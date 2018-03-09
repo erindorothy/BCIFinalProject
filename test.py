@@ -4,7 +4,7 @@ import serial
 import time
 
 if platform.system() == 'Windows':
-    sky = NeuroPy.NeuroPy("COM6", 57600)
+    sky = NeuroPy.Neuropy("COM6", 57600)
 else:
     sky = NeuroPy.NeuroPy("/dev/rfcomm0", 57600)
 
