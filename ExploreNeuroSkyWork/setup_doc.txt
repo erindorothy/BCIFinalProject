@@ -1,0 +1,27 @@
+Erin Cole
+
+How to get this party started:
+
+Missing Dependencies
+
+conda install pyserial
+
+from NeuroPy import NeuroPy
+from time import sleep
+
+-----> start with fixing bugs here
+neuropy = NeuroPy.NeuroPy("COM6", 57600)
+
+def attention_callback(attention_value):
+	"""this function will be called everytime NeuroPy has a new value for attention"""
+	print("Value of attantion is: ", attention_value)
+	return None
+
+neuropy.setCallBack("attention", attention_callback)
+neuropy.start()
+
+try:
+	while True:
+		sleep(0.2)
+	finally:
+		neuropy.stop()
