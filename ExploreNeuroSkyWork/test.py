@@ -1,3 +1,6 @@
+# This file was written by Gael Van der Le
+
+
 from NeuroPy import NeuroPy
 import platform
 import serial
